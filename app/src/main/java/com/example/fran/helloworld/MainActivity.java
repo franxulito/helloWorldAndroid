@@ -8,11 +8,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(MainActivity.class);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        LOGGER.info("Creando la main activity");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -26,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        LOGGER.info("Finalizando onCreate");
     }
 
     @Override
